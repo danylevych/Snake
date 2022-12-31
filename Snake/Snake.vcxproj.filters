@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Map">
+      <UniqueIdentifier>{c329fe77-2550-4f8a-99e4-398205c652d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Time">
+      <UniqueIdentifier>{4124d7d8-ec3b-48f5-9161-39c428363ebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tools">
+      <UniqueIdentifier>{125e1eae-de19-4f32-8797-44ad45e1390d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Files">
+      <UniqueIdentifier>{5a4acb82-e596-40f5-83e7-73ec1e4f58b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{fea91068-d82a-4d2b-8cd0-30527eea0734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Walls">
+      <UniqueIdentifier>{c5f867df-b06c-43b3-8e9c-3a906f76a78c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sosce">
+      <UniqueIdentifier>{27dedbcb-5d22-4b53-afb5-26bc14d4cde1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Tools\FileManager\FileExeption.h">
+      <Filter>Header Files\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\FileManager\FileManager.h">
+      <Filter>Header Files\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\SetLogos\Map.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\CodeTime.h">
+      <Filter>Header Files\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Tools.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Console.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Snake.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Apple.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Sosce</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files\Sosce</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\SetLogos\Wallpaper.h">
+      <Filter>Header Files\Walls</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\FileManager\FileManager.cpp">
+      <Filter>Header Files\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\SetLogos\Map.cpp">
+      <Filter>Header Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\CodeTime.cpp">
+      <Filter>Header Files\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Tools.cpp">
+      <Filter>Header Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Console.cpp">
+      <Filter>Header Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Snake.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Header Files\Sosce</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Header Files\Sosce</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\SetLogos\Wallpaper.cpp">
+      <Filter>Header Files\Walls</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
