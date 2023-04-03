@@ -36,70 +36,89 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tools\FileManager\FileExeption.h">
-      <Filter>Header Files\Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tools\FileManager\FileManager.h">
-      <Filter>Header Files\Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tools\SetLogos\Map.h">
-      <Filter>Header Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Tools\CodeTime.h">
-      <Filter>Header Files\Time</Filter>
-    </ClInclude>
-    <ClInclude Include="Tools\Tools.h">
+    <ClInclude Include="src\scripts\Tools\Tools.h">
       <Filter>Header Files\Tools</Filter>
     </ClInclude>
-    <ClInclude Include="Tools\Console.h">
-      <Filter>Header Files\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="Objects\Snake.h">
+    <ClInclude Include="src\scripts\Objects\Snake.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\Apple.h">
+    <ClInclude Include="src\scripts\Objects\Apple.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
+    <ClInclude Include="src\scripts\Game.h">
       <Filter>Header Files\Sosce</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
+    <ClInclude Include="src\scripts\UI\Menu.h">
       <Filter>Header Files\Sosce</Filter>
     </ClInclude>
-    <ClInclude Include="Tools\SetLogos\Wallpaper.h">
+    <ClInclude Include="src\scripts\Tools\Paths.h">
       <Filter>Header Files\Walls</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scripts\UI\YesNoMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scripts\UI\LevelMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scripts\UI\OptionsMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scripts\UI\InformatioMenu.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Tools\FileManager\FileManager.cpp">
-      <Filter>Header Files\Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tools\SetLogos\Map.cpp">
-      <Filter>Header Files\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="Tools\CodeTime.cpp">
-      <Filter>Header Files\Time</Filter>
-    </ClCompile>
-    <ClCompile Include="Tools\Tools.cpp">
+    <ClCompile Include="src\scripts\Tools\Tools.cpp">
       <Filter>Header Files\Tools</Filter>
     </ClCompile>
-    <ClCompile Include="Tools\Console.cpp">
-      <Filter>Header Files\Tools</Filter>
-    </ClCompile>
-    <ClCompile Include="Objects\Snake.cpp">
+    <ClCompile Include="src\scripts\Objects\Snake.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
+    <ClCompile Include="src\scripts\Game.cpp">
       <Filter>Header Files\Sosce</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
+    <ClCompile Include="src\scripts\UI\Menu.cpp">
       <Filter>Header Files\Sosce</Filter>
     </ClCompile>
-    <ClCompile Include="Tools\SetLogos\Wallpaper.cpp">
+    <ClCompile Include="src\scripts\Tools\Paths.cpp">
       <Filter>Header Files\Walls</Filter>
     </ClCompile>
+    <ClCompile Include="src\scripts\UI\YesNoMenu.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scripts\UI\LevelMenu.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scripts\UI\OptionsMenu.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scripts\UI\InformatioMenu.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\Pictures\Logos\Loading.txt" />
+    <Text Include="data\Pictures\Logos\Logo.txt" />
+    <Text Include="data\Pictures\Logos\LogoLevel.txt" />
+    <Text Include="data\Pictures\Logos\LogoOption.txt" />
+    <Text Include="data\Pictures\Logos\YesOrNoLogo.txt" />
+    <Text Include="data\Pictures\Logos\GameOver.txt" />
+    <Text Include="data\Pictures\Logos\InformationLogo.txt" />
+    <Text Include="data\Pictures\Levels\HardLevel.txt" />
+    <Text Include="data\Pictures\Levels\MiddleLevel.txt" />
+    <Text Include="data\Pictures\Levels\SimpleLevel.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="data\Sound\BackgroundSong.mp3" />
+    <Media Include="data\Sound\Eating_fruit.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="data\Sound\Hit.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="data\Sound\Loading.mp3" />
   </ItemGroup>
 </Project>

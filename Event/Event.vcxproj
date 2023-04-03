@@ -18,35 +18,74 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Enums\Letter.h" />
+    <ClInclude Include="src\Tools\Clock\Clock.h" />
+    <ClInclude Include="src\Tools\Console Elements\IMenu.h" />
+    <ClInclude Include="src\Tools\BuildButton.h" />
+    <ClInclude Include="src\Tools\Console Elements\Button.h" />
+    <ClInclude Include="src\Managers\File Manager\FileManager.h" />
+    <ClInclude Include="src\Tools\Console.h" />
+    <ClInclude Include="src\Exception\EventException.h" />
+    <ClInclude Include="src\Managers\Audio Manager\AudioManager.h" />
+    <ClInclude Include="src\Enums\Color.h" />
+    <ClInclude Include="Core.hpp" />
+    <ClInclude Include="src\Event\Event.h" />
+    <ClInclude Include="src\Managers\Event Manager\EventManager.h" />
+    <ClInclude Include="src\All Events\IEvent.h" />
+    <ClInclude Include="src\Enums\KeyBoard.h" />
+    <ClInclude Include="src\All Events\KeyEvent.h" />
+    <ClInclude Include="src\Tools\Console Elements\Wallpaper.h" />
+    <ClInclude Include="src\Tools\Time\Time.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Tools\Clock\Clock.cpp" />
+    <ClCompile Include="src\Tools\Console Elements\IMenu.cpp" />
+    <ClCompile Include="src\Tools\BuildButton.cpp" />
+    <ClCompile Include="src\Tools\Console Elements\Button.cpp" />
+    <ClCompile Include="src\Managers\File Manager\FileManager.cpp" />
+    <ClCompile Include="src\Tools\Console.cpp" />
+    <ClCompile Include="src\Managers\Audio Manager\AudioManager.cpp" />
+    <ClCompile Include="src\Event\Event.cpp" />
+    <ClCompile Include="src\Managers\Event Manager\EventManager.cpp" />
+    <ClCompile Include="src\All Events\KeyEvent.cpp" />
+    <ClCompile Include="src\Tools\Console Elements\Wallpaper.cpp" />
+    <ClCompile Include="src\Tools\Time\Time.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\Fonts\FullFont.txt" />
+    <Text Include="data\Fonts\EmptyFont.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4872a06d-6700-497c-9cbb-c1aac04db71f}</ProjectGuid>
-    <RootNamespace>Snake</RootNamespace>
+    <ProjectGuid>{a7e01cfa-6743-4192-90dd-45cbd36c8520}</ProjectGuid>
+    <RootNamespace>Event</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Event</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -126,53 +165,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="src\scripts\Game.h" />
-    <ClInclude Include="src\scripts\UI\InformatioMenu.h" />
-    <ClInclude Include="src\scripts\UI\OptionsMenu.h" />
-    <ClInclude Include="src\scripts\UI\LevelMenu.h" />
-    <ClInclude Include="src\scripts\UI\Menu.h" />
-    <ClInclude Include="src\scripts\Objects\Apple.h" />
-    <ClInclude Include="src\scripts\Objects\Snake.h" />
-    <ClInclude Include="src\scripts\Tools\Paths.h" />
-    <ClInclude Include="src\scripts\Tools\Tools.h" />
-    <ClInclude Include="src\scripts\UI\YesNoMenu.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\scripts\Game.cpp" />
-    <ClCompile Include="src\scripts\UI\InformatioMenu.cpp" />
-    <ClCompile Include="src\scripts\UI\OptionsMenu.cpp" />
-    <ClCompile Include="src\scripts\UI\LevelMenu.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\scripts\UI\Menu.cpp" />
-    <ClCompile Include="src\scripts\Objects\Snake.cpp" />
-    <ClCompile Include="src\scripts\Tools\Paths.cpp" />
-    <ClCompile Include="src\scripts\Tools\Tools.cpp" />
-    <ClCompile Include="src\scripts\UI\YesNoMenu.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Event\Event.vcxproj">
-      <Project>{a7e01cfa-6743-4192-90dd-45cbd36c8520}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="data\Pictures\Levels\HardLevel.txt" />
-    <Text Include="data\Pictures\Levels\MiddleLevel.txt" />
-    <Text Include="data\Pictures\Levels\SimpleLevel.txt" />
-    <Text Include="data\Pictures\Logos\GameOver.txt" />
-    <Text Include="data\Pictures\Logos\InformationLogo.txt" />
-    <Text Include="data\Pictures\Logos\Loading.txt" />
-    <Text Include="data\Pictures\Logos\Logo.txt" />
-    <Text Include="data\Pictures\Logos\LogoLevel.txt" />
-    <Text Include="data\Pictures\Logos\LogoOption.txt" />
-    <Text Include="data\Pictures\Logos\YesOrNoLogo.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="data\Sound\BackgroundSong.mp3" />
-    <Media Include="data\Sound\Eating_fruit.wav" />
-    <Media Include="data\Sound\Hit.wav" />
-    <Media Include="data\Sound\Loading.mp3" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

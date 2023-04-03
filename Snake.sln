@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Snake", "Snake\Snake.vcxproj", "{4872A06D-6700-497C-9CBB-C1AAC04DB71F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Event", "Event\Event.vcxproj", "{A7E01CFA-6743-4192-90DD-45CBD36C8520}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{4872A06D-6700-497C-9CBB-C1AAC04DB71F}.Release|x64.Build.0 = Release|x64
 		{4872A06D-6700-497C-9CBB-C1AAC04DB71F}.Release|x86.ActiveCfg = Release|Win32
 		{4872A06D-6700-497C-9CBB-C1AAC04DB71F}.Release|x86.Build.0 = Release|Win32
+		{A7E01CFA-6743-4192-90DD-45CBD36C8520}.Debug|x64.ActiveCfg = Debug|x64
+		{A7E01CFA-6743-4192-90DD-45CBD36C8520}.Debug|x64.Build.0 = Debug|x64
+		{A7E01CFA-6743-4192-90DD-45CBD36C8520}.Debug|x86.ActiveCfg = Debug|Win32
+		{A7E01CFA-6743-4192-90DD-45CBD36C8520}.Debug|x86.Build.0 = Debug|Win32
+		{A7E01CFA-6743-4192-90DD-45CBD36C8520}.Release|x64.ActiveCfg = Release|x64
+		{A7E01CFA-6743-4192-90DD-45CBD36C8520}.Release|x64.Build.0 = Release|x64
+		{A7E01CFA-6743-4192-90DD-45CBD36C8520}.Release|x86.ActiveCfg = Release|Win32
+		{A7E01CFA-6743-4192-90DD-45CBD36C8520}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
