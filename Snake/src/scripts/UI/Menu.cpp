@@ -194,9 +194,16 @@ void MainMenu::Loading()
 	Core::Console::SetTextColor(Core::Color::GREEN);
 	std::wstring_convert<std::codecvt_utf8<char16_t>, char16_t> convert;
 
-	for (const auto& elem : wallpaper)
+	for (auto elem = wallpaper.cbegin(), end = wallpaper.cend(); elem != end; ++elem)
 	{
-		std::cout << convert.to_bytes(elem) << std::endl;
+		if (elem == end - 1)  // The last item in wallpaper.
+		{
+			std::cout << convert.to_bytes(*elem);
+		}
+		else 
+		{
+			std::cout << convert.to_bytes(*elem) << std::endl;
+		}
 		Sleep(60);
 	}
 	Sleep(60);

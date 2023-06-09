@@ -1,4 +1,4 @@
-#include "Game.h"
+﻿#include "Game.h"
 
 #include <iostream>
 #include <string>
@@ -10,32 +10,57 @@
 #include "Objects/Snake.h"
 #include "Objects/Apple.h"
 
+#include <codecvt>
 
 #pragma region PRIVATE SECTION
 
+void Game::GenerateApple()
+{
+	do
+	{
+		apple.GenerateNewApple(*snake, snake->Size());
+	} while (IsColision(apple.GetApplePos()));
+}
+
 void Game::PrintField()
 {
-	for (const auto& ele : field)
+	std::wstring_convert<std::codecvt_utf8<char16_t>, char16_t> codnverter;
+
+	for (const auto& item : field)
 	{
-		std::cout << ele << std::endl;
+		std::cout << codnverter.to_bytes(item) << std::endl;
 	}
 }
 
-bool Game::SnakeInField(const Point& position)
+bool Game::IsColision(const Point& position, bool isSnake)
 {
-	// Because only if snake have size that = 4, its can touch tail.
-	if (snake->Size() >= 4)							
-		if (field[position.y][position.x] == 'o')
-			return true;
+	// Checking colision for the snake.
+	if (isSnake)
+	{
+		// Because only if snake have size that = 4, its can touch tail.
+		if (snake->Size() >= 4)
+		{
+			if (field[position.y][position.x] == U'o')
+			{
+				return true;
+			}
+		}
+	}
 
-	if (field[position.y][position.x] == '-')
+	switch (field[position.y][position.x]) 
+	{
+	case U'═':
+	case U'║':
+	case U'╔':
+	case U'╚':
+	case U'╗':
+	case U'╝':
+	case U'╦':
+	case U'╩':
+	case U'╣':
+	case U'╠':
 		return true;
-	else if (field[position.y][position.x] == '|')
-		return true;
-	else if (field[position.y][position.x] == '\\')
-		return true;
-	else if (field[position.y][position.x] == '/')
-		return true;
+	}
 
 	return false;
 }
@@ -43,21 +68,26 @@ bool Game::SnakeInField(const Point& position)
 void Game::Update(const std::string& levelPath)
 {
 	Core::Console::SetCursorPosition(0, 0); // Sets cursor on start position.
-
+	
 	field.clear();
 	Core::FileManager::ReadFile(levelPath, field);
 
+	if (!apple)
+	{
+		GenerateApple();
+	}
+
 	// Setting snake's head and tail, and apple on their position.
-	field[apple.GetApplePos().y][apple.GetApplePos().x] = '@';
-	field[snake->head->y][ snake->head->x] = 'O';
+	field[apple.GetApplePos().y][apple.GetApplePos().x] = U'●';
+	field[snake->head->y][ snake->head->x] = U'O';
 
 	for (size_t i = 1; i < snake->Size(); i++)
 	{
-		field[(*snake)[i].y][(*snake)[i].x] = 'o';
+		field[(*snake)[i].y][(*snake)[i].x] = U'o';
 	}
 
 	PrintField();
-	std::cout << "\nSCORE:  " << score << std::endl;
+	std::cout << scoreText;
 }
 
 void Game::Input()
@@ -100,30 +130,26 @@ void Game::Logic(double deltaTime)
 	if (snake->head->x == apple.GetApplePos().x && snake->head->y == apple.GetApplePos().y)
 	{
 		// Playing eating sound.
-		std::thread th{ Core::AudioManager::PlayAudio, Paths::eatingSound, false };
+		std::thread { Core::AudioManager::PlayAudio, Paths::eatingSound, false }.detach();
 
 		// Pushing new element on snake's end.
 		snake->PushTail((*snake)[snake->Size() - 1]);
 
-		do
-		{
-			apple.GenerateNewApple(*snake, snake->Size());
-		} while (field[apple.GetApplePos().y][apple.GetApplePos().x] == '|' || field[apple.GetApplePos().y][apple.GetApplePos().x] == '-'
-			  || field[apple.GetApplePos().y][apple.GetApplePos().x] == '\\' || field[apple.GetApplePos().y][apple.GetApplePos().x] == '/');
+		GenerateApple();
 
 		score += 10;
-		th.detach();
+		scoreText.SetText("score: " + std::to_string(score), Core::Fonts::FULL);
 	}
 
 	snake->Move(dir, deltaTime);
 
 	// If snake touch border fields or its touch its tail.
-	if (SnakeInField(*snake->head))
+	if (IsColision(*snake->head))
 	{
 		system("cls");
 		field.clear();
 
-		Core::AudioManager::PlayAudio(Paths::hitSound);
+		std::thread{ Core::AudioManager::PlayAudio, Paths::hitSound, false }.detach();
 		Core::FileManager::ReadFile(Paths::gameOverMenu, field);
 
 		gameStatus = false;
@@ -143,12 +169,13 @@ void Game::Logic(double deltaTime)
 
 Game::Game(Snake* snake)
 	: snake(snake), apple(Point{})
-{	}
+{
+	scoreText.SetY(27);
+	scoreText.SetText("score: 0", Core::Fonts::FULL);
+}
 
 void Game::StartGame(const std::string& levelPath)
 {
-	apple.GenerateNewApple(*snake, snake->Size());
-
 	Core::Clock time;
 	while (gameStatus)
 	{

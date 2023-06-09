@@ -6,6 +6,7 @@
 #include "Objects/Snake.h"
 #include "Objects/Apple.h"
 
+#include "../../../Event/src/Tools/Console Elements/Label.h"
 
 class Game
 {
@@ -13,7 +14,9 @@ private:
 	Snake* snake;
 	Apple apple;
 
-	std::vector<std::string> field; // Game field.
+	std::vector<std::u16string> field; // Game field.
+
+	Core::Label scoreText;
 	uint32_t score = 0;
 
 	bool gameStatus = true;
@@ -25,7 +28,8 @@ public:
 
 private:
 	void PrintField();
-	bool SnakeInField(const Point& position); // Checks if Snake doesn't touch fields border or itself.
+	void GenerateApple();
+	bool IsColision(const Point& position, bool isSnake = true); // Checks if Snake doesn't touch fields border or itself.
 
 	void Update(const std::string& levelPath);
 	void Input();

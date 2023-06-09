@@ -9,7 +9,7 @@ class Apple
 {
 private:
 	Point apple;
-
+	
 	void GeneratePosition()
 	{
 		std::srand(static_cast<unsigned>(time(nullptr)));
@@ -34,6 +34,11 @@ public:
 				GeneratePosition();
 			}
 		}
+	}
+
+	operator bool() const
+	{
+		return apple.x == Point::DEFAULT && apple.y == Point::DEFAULT ? false : true;
 	}
 
 	Point GetApplePos() const { return apple; }

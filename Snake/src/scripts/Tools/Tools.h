@@ -26,8 +26,12 @@ namespace ENUM // Enumerations for game & menu
 
 struct Point
 {
+	const static int DEFAULT = -1;
+
 	int x;
 	int y;
+
+	Point(int x = Point::DEFAULT, int y = Point::DEFAULT) : x(x), y(y) {	}
 };
 
 struct TextScore

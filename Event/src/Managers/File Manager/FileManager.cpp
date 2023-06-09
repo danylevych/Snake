@@ -6,6 +6,8 @@ namespace Core
 {
 	void FileManager::ReadTextForElement(const std::string& path, const std::string& message, std::vector<std::u16string>& dest, size_t countOfElement)
 	{
+		const static int DIGIT_BEGIN = 100;
+		const static int PUNCT_BEGIN = 150;
 		std::basic_ifstream<char16_t, std::char_traits<char16_t>> file;
 
 		file.open(path, std::fstream::binary);
@@ -19,31 +21,48 @@ namespace Core
 
 		for (auto elem : message)
 		{
-			if (std::tolower(elem) == ' ')
+			file.seekg(std::ios::beg);
+			std::u16string str;
+
+			if (std::ispunct(elem))
+			{
+				for (size_t i = 1; i < PUNCT_BEGIN; i++)
+				{
+					std::getline(file, str);
+				}
+			}
+			else if (std::isdigit(elem))
+			{
+				for (size_t i = 1; i < DIGIT_BEGIN + (elem - '0') * countOfElement; i++)
+				{
+					std::getline(file, str);
+				}
+			}
+			else if (std::tolower(elem) == ' ')
 			{
 				for (size_t i = 0; i < countOfElement; i++)
 				{
 					dest[i] += u"   ";
 				}
+
+				continue;
 			}
 			else
 			{
 				size_t startIndex = (std::tolower(elem) - 'a') * countOfElement;
-				file.seekg(0);
-				std::u16string str;
 
 				for (size_t i = 0; i < startIndex; i++)
 				{
 					std::getline(file, str);
 				}
+			}
 
-				for (size_t i = 0; i < countOfElement; i++)
-				{
-					str.clear();
-					std::getline(file, str);
-					str.erase(str.size() - 1);
-					dest[i] += str;
-				}
+			for (size_t i = 0; i < countOfElement; i++)
+			{
+				str.clear();
+				std::getline(file, str);
+				str.erase(str.size() - 1);
+				dest[i] += str;
 			}
 		}
 

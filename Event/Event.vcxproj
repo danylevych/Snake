@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Tools\Console Elements\Label.h" />
     <ClInclude Include="src\Enums\Letter.h" />
     <ClInclude Include="src\Tools\Clock\Clock.h" />
     <ClInclude Include="src\Tools\Console Elements\IMenu.h" />
@@ -39,6 +40,7 @@
     <ClInclude Include="src\Tools\Time\Time.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Tools\Console Elements\Label.cpp" />
     <ClCompile Include="src\Tools\Clock\Clock.cpp" />
     <ClCompile Include="src\Tools\Console Elements\IMenu.cpp" />
     <ClCompile Include="src\Tools\BuildButton.cpp" />

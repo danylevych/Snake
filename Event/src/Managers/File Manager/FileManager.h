@@ -9,8 +9,9 @@ namespace Core
 	class FileManager
 	{
 	private:
+		friend class Label;
 		friend class Button;
-
+		
 	private:
 		static void ReadTextForElement(const std::string& path, const std::string& message, std::vector<std::u16string>& dest, size_t countOfElement);
 	public:
